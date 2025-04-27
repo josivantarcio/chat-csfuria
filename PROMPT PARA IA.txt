@@ -1,0 +1,134 @@
+PROMPT PARA IA - Challenge 1: Experiência Conversacional FURIA
+Objetivo do Projeto:
+
+Crie uma aplicação web de chat para fãs do time de CS:GO da FURIA, onde eles possam conversar com um bot que traz informações sobre o time, simula interações de torcida e mostra status de jogos.
+
+Tecnologias obrigatórias:
+
+Backend: Python com FastAPI
+
+Frontend: ReactJS (usar Vite para inicialização rápida)
+
+Banco de Dados: Firebase Firestore (armazenar histórico de conversas)
+
+IA Conversacional: Dialogflow CX (para gerenciar as respostas do bot)
+
+Deploy:
+
+Backend: Render.com (configurado com Procfile e requirements.txt)
+
+Frontend: Netlify (pronto para build e deploy gratuito, sem necessidade de cartão)
+
+Detalhamento do projeto:
+
+Backend (FastAPI):
+
+Criar um endpoint POST /chat que:
+
+Recebe a mensagem do usuário via JSON.
+
+Encaminha a mensagem para o Dialogflow CX.
+
+Recebe a resposta do Dialogflow.
+
+Salva a conversa no Firebase Firestore (mensagem do usuário + resposta do bot).
+
+Retorna a resposta ao Frontend.
+
+Configurar CORS para permitir comunicação com o Frontend.
+
+Arquivos necessários:
+
+main.py
+
+requirements.txt
+
+Procfile
+
+.env (para variáveis como chave do Dialogflow e credenciais do Firebase)
+
+Frontend (ReactJS):
+
+Criar uma Landing Page com:
+
+Logo da FURIA (usar imagem pública ou placeholder).
+
+Texto de boas-vindas ao chat dos fãs.
+
+Componente de Chat:
+
+Campo de input para o usuário digitar mensagem.
+
+Botão "Enviar".
+
+Área que mostra o histórico das mensagens trocadas (usuário e bot).
+
+As mensagens são enviadas ao backend via Axios.
+
+Interface responsiva e agradável.
+
+Configurar o projeto para build e deploy no Netlify (npm run build).
+
+Firebase (Firestore):
+
+No backend, toda mensagem enviada/recebida deve ser salva em uma coleção conversas.
+
+Cada documento da coleção deve ter:
+
+ID da conversa
+
+Mensagem do usuário
+
+Resposta do bot
+
+Timestamp
+
+Dialogflow (CX):
+
+Criar um agente básico:
+
+Intenção de boas-vindas ("Olá, seja bem-vindo ao chat da FURIA!")
+
+Intenção para perguntas comuns ("Quando é o próximo jogo?", "Quem são os jogadores?")
+
+Intenção de torcida ("Vamos FURIA!", "Rumo ao Major!")
+
+No backend, integração com a API REST do Dialogflow CX (com autenticação).
+
+Deploy:
+
+Backend no Render.com (sem necessidade de cartão).
+
+Frontend no Netlify (sem necessidade de cartão).
+
+Documentação:
+
+Criar um README.md completo no repositório:
+
+Como rodar localmente o backend e frontend.
+
+Como configurar as chaves do Firebase e Dialogflow.
+
+Como fazer deploy no Render e Netlify.
+
+Vídeo de demonstração: sugerir que seja gravado mostrando as interações do chat.
+
+Instruções especiais para a IA:
+
+Seja direto e objetivo, evitando complexidade desnecessária.
+
+Separe claramente o código do backend e frontend em pastas (/backend, /frontend).
+
+Deixe exemplos de .env e arquivos de configuração.
+
+Faça o código já pronto para "rodar local" e "deployar" rapidamente.
+
+Resumo Rápido do Fluxo da Aplicação:
+
+Usuário envia mensagem → Frontend envia para Backend → Backend manda para Dialogflow → Dialogflow responde → Backend retorna resposta → Frontend exibe resposta → Backend salva conversa no Firebase.
+
+✅ IMPORTANTE:
+Este projeto é para o Challenge 1 - FURIA Chat de um processo seletivo.
+A prioridade é entregar algo funcional, bonito e fácil de entender.
+
+
